@@ -317,7 +317,17 @@
         height: 210px;
       }
     }
-  </style>
+  
+.resource-links {display:flex;flex-wrap:wrap;gap:10px 18px;margin:14px 0;font-size:.88rem;line-height:1.6;}
+.resource-links a {color:#7dd3fc;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;}
+.project-card {scroll-margin-top:20px;}
+.project-title {overflow-wrap:anywhere;}
+.project-summary a {color:#7dd3fc;}
+.project-note {color:#a5b4c8;font-size:.85rem;line-height:1.65;}
+button:focus-visible,a:focus-visible {outline:2px solid #38bdf8;outline-offset:4px;}
+.nav-links {flex-wrap:wrap;}
+.project-title {margin-top:6px;}
+</style>
 </head>
 <body>
   <div class="page">
@@ -329,6 +339,7 @@
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="projects.html" class="nav-primary">Projects</a>
+        <a href="publications.html">Publications</a>
         <a href="cv.html">CV</a>
       </nav>
     </header>
@@ -336,7 +347,7 @@
     <section class="page-header">
       <div class="page-kicker">Research Portfolio</div>
       <h1 class="page-title">PhD &amp; XR Research Projects</h1>
-      <p class="page-subtitle">Interactive overview of ongoing and recent work across VR/XR and EEG-based studies.</p>
+      <p class="page-subtitle">Ongoing research across XR, EEG and human behaviour. Statuses updated September 2026.</p>
     </section>
 
     <section class="section-inner">
@@ -358,17 +369,13 @@
       <div class="projects-list">
 
         <!-- Neobic-XR -->
-        <article class="project-card" data-category="vr">
+        <article id="neobic-xr" class="project-card" data-category="vr">
           <div class="project-meta">2024 – Present · EventLab</div>
-          <div class="project-title">Neobic-XR: Exercise for Oncological Patients</div>
-          <p class="project-summary">
-            VR environment designed to improve the mental and physical wellbeing of oncological patients and reduce
-            drop-off in exercise routines. Includes personalised avatars for the experimental group and investigates the
-            impact of observing one’s own avatar demonstrating exercises before performing them.
-          </p>
+          <div class="project-title">NEOBIC-XR: Home-Based Exercise in Oncology</div>
+          <p class="project-summary">Home-based XR exercise platform for supportive oncology care, combining personalised avatars, self-observation, mixed reality, multilingual guidance and adjustable exercise intensity. The multicentre evaluation across three Spanish hospitals is ongoing. A 2026 methods paper describes the platform and evaluation framework.</p>
           <div class="demo-row">
             <button
-              class="demo-btn"
+              class="demo-btn" aria-expanded="false"
               data-target="media-neobic"
               data-open-label="See demonstration"
               data-close-label="Hide demonstration"
@@ -377,7 +384,7 @@
             </button>
           </div>
           <div id="media-neobic" class="media-container media-collapsed">
-            <iframe
+            <iframe loading="lazy"
               class="project-media-frame"
               src="https://youtube.com/embed/1yTxFfME9Y0"
               title="Neobic-XR Demonstration"
@@ -386,13 +393,13 @@
               allowfullscreen
             ></iframe>
           </div>
-          <div class="pill-row">
-            <span class="pill">Starting the Pilot Study</span>
+          <div class="resource-links"><a href="https://doi.org/10.3389/frvir.2026.1927617" target="_blank" rel="noopener noreferrer">Methods paper · Frontiers</a> <a href="https://www.youtube.com/watch?v=1yTxFfME9Y0" target="_blank" rel="noopener noreferrer">Watch demo on YouTube</a></div><div class="pill-row">
+            <span class="pill">Collecting data</span>
           </div>
         </article>
 
         <!-- YoungFit Qigong -->
-        <article class="project-card" data-category="vr">
+        <article id="youngfit-qigong" class="project-card" data-category="vr">
           <div class="project-meta">2024 – Present · EventLab</div>
           <div class="project-title">YoungFit – Qigong</div>
           <p class="project-summary">
@@ -401,12 +408,12 @@
             Chinese-inspired elements to enhance focus and atmosphere.
           </p>
           <div class="pill-row">
-            <span class="pill">Development</span>
+            <span class="pill">Collecting data</span>
           </div>
         </article>
 
         <!-- YoungFit Mindfulness -->
-        <article class="project-card" data-category="vr">
+        <article id="youngfit-mindfulness" class="project-card" data-category="vr">
           <div class="project-meta">2024 – Present · EventLab</div>
           <div class="project-title">YoungFit – Mindfulness</div>
           <p class="project-summary">
@@ -414,23 +421,19 @@
             custom-crafted cinematics designed directly from the instructor’s verbal cues (non-AI).
           </p>
           <div class="pill-row">
-            <span class="pill">Development</span>
+            <span class="pill">Collecting data</span>
           </div>
         </article>
 
         <!-- Traffic Simulation -->
-        <article class="project-card" data-category="vr">
+        <article id="traffic" class="project-card" data-category="vr">
           <div class="project-meta">2024 – Present · EventLab</div>
           <div class="project-title">VR Traffic Simulation for Social Awareness</div>
-          <p class="project-summary">
-            VR traffic simulation promoting social awareness and studying user behaviour in controlled scenarios.
-            Collaboration with the Catalan Traffic Department. Participants embody a traffic-accident victim, reflecting the
-            philosophical golden rule: “Do not do to others what you would not want them to do to you.” Pilot results show
-            ~95% probability that the experimental group intervenes more than controls.
-          </p>
+          <p class="project-summary">VR traffic-safety and mobile-phone-awareness simulation developed in collaboration with the Servei Català de Trànsit. Participants experience a traffic incident from the victim’s perspective. Following an initial pilot with University of Barcelona students, the project is collecting data with participants in prison through the Department of Justice.</p>
+          <p class="project-note">Earlier phase: UB student pilot. The previously reported approximately 95% probability of greater intervention in the experimental group refers to this pilot, not to the ongoing prison study.</p>
           <div class="demo-row">
             <button
-              class="demo-btn"
+              class="demo-btn" aria-expanded="false"
               data-target="media-traffic"
               data-open-label="See demonstration"
               data-close-label="Hide demonstration"
@@ -439,7 +442,7 @@
             </button>
           </div>
           <div id="media-traffic" class="media-container media-collapsed">
-            <iframe
+            <iframe loading="lazy"
               class="project-media-frame"
               src="https://www.youtube.com/embed/q44TbTox730"
               title="VR Traffic Simulation Demonstration"
@@ -448,13 +451,13 @@
               allowfullscreen
             ></iframe>
           </div>
-          <div class="pill-row">
-            <span class="pill">Collecting Data</span>
+          <div class="resource-links"><a href="https://www.youtube.com/watch?v=q44TbTox730" target="_blank" rel="noopener noreferrer">Watch demo on YouTube</a> <a href="https://lnkd.in/dSsMfnQt" target="_blank" rel="noopener noreferrer">El Periódico · 13 February 2025</a></div><div class="pill-row">
+            <span class="pill">Collecting data with participants in prison</span>
           </div>
         </article>
 
         <!-- Content Moderators XR/2D (VR category) -->
-        <article class="project-card" data-category="vr">
+        <article id="content-moderators" class="project-card" data-category="vr">
           <div class="project-meta">2023 – Present · EventLab</div>
           <div class="project-title">XR/2D Study to Support Content Moderators</div>
           <p class="project-summary">
@@ -464,7 +467,7 @@
           </p>
           <div class="demo-row">
             <button
-              class="demo-btn"
+              class="demo-btn" aria-expanded="false"
               data-target="media-content"
               data-open-label="See demonstration"
               data-close-label="Hide demonstration"
@@ -473,7 +476,7 @@
             </button>
           </div>
           <div id="media-content" class="media-container media-collapsed">
-            <iframe
+            <iframe loading="lazy"
               class="project-media-frame"
               src="https://www.youtube.com/embed/DMhgZb_YtDE"
               title="XR/2D Content Moderators Study Demonstration"
@@ -482,13 +485,13 @@
               allowfullscreen
             ></iframe>
           </div>
-          <div class="pill-row">
-            <span class="pill">Collecting Data</span>
+          <p class="project-note">Manuscript submission planned for late 2026.</p><div class="pill-row">
+            <span class="pill">Collecting data</span>
           </div>
         </article>
 
         <!-- Content Moderators under EEG group -->
-        <article class="project-card" data-category="vr-eeg">
+        <article id="content-moderators-eeg" class="project-card" data-category="vr-eeg">
           <div class="project-meta">2023 – Present · EventLab</div>
           <div class="project-title">XR/2D Study to Support Content Moderators (EEG Analysis)</div>
           <p class="project-summary">
@@ -497,7 +500,7 @@
           </p>
           <div class="demo-row">
             <button
-              class="demo-btn"
+              class="demo-btn" aria-expanded="false"
               data-target="media-contenteeg"
               data-open-label="See demonstration"
               data-close-label="Hide demonstration"
@@ -506,7 +509,7 @@
             </button>
           </div>
           <div id="media-contenteeg" class="media-container media-collapsed">
-            <iframe
+            <iframe loading="lazy"
               class="project-media-frame"
               src="https://www.youtube.com/embed/DMhgZb_YtDE"
               title="XR/2D Content Moderators Study Demonstration"
@@ -516,22 +519,18 @@
             ></iframe>
           </div>
           <div class="pill-row">
-            <span class="pill">Collecting Data</span>
+            <span class="pill">Collecting data</span>
           </div>
         </article>
 
         <!-- PRESENCE Project -->
-        <article class="project-card" data-category="vr-eeg">
+        <article id="presence" class="project-card" data-category="vr-eeg">
           <div class="project-meta">2023 – Present · EventLab</div>
           <div class="project-title">PRESENCE – EEG Hyperscanning for Co-Presence</div>
-          <p class="project-summary">
-            Multiplayer VR experience inspired by <em>The Mind</em>, used to study co-presence and interpersonal synchrony through
-            EEG hyperscanning. Players collaborate without speech, guided only by gaze and subtle movement, while each
-            sees others inside personalised VR scenarios.
-          </p>
+          <p class="project-summary">Multiplayer VR experience inspired by <em>The Mind</em>, investigating social co-presence and interpersonal synchrony through a silent cooperative task and EEG hyperscanning. Behavioural findings are being presented at ISMAR 2026; EEG data analysis is ongoing.</p><p class="project-note">Preliminary EEG results and the post-processing pipeline were presented with Ana Zappa in an invited talk at CuttingGardens 2026.</p>
           <div class="demo-row">
             <button
-              class="demo-btn"
+              class="demo-btn" aria-expanded="false"
               data-target="media-presence"
               data-open-label="See images"
               data-close-label="Hide images"
@@ -570,40 +569,37 @@
               style="margin-top:8px;"
             />
           </div>
-          <div class="pill-row">
-            <span class="pill">Analyzing Eye-Tracking &amp; Behaviour</span>
-            <span class="pill">Development for EEG</span>
+          <div class="resource-links"><a href="https://www.ieeeismar.net/2026/posters/" target="_blank" rel="noopener noreferrer">ISMAR poster programme</a> <a href="https://cuttingeeg.org/cuttinggardens2026/gardens/barcelona/" target="_blank" rel="noopener noreferrer">CuttingGardens · Conference page</a></div><div class="pill-row">
+            <span class="pill">Behavioural poster · ISMAR 2026</span>
+            <span class="pill">Analysing EEG data</span>
           </div>
         </article>
 
         <!-- Predicted Time OpenXR -->
-        <article class="project-card" data-category="vr-eeg">
+        <article id="chronoxr" class="project-card" data-category="vr-eeg">
           <div class="project-meta">2024 – Present · EventLab</div>
-          <div class="project-title">Predicted Time OpenXR Exposure Plugin</div>
-          <p class="project-summary">
-            Unity plugin exposing OpenXR’s predicted display time for precise alignment between Unity events and LSL
-            triggers, improving timestamp reliability without external photodiodes.
-          </p>
+          <div class="project-title">ChronoXR — Timing for XR Experiments</div>
+          <p class="project-summary">Unity/OpenXR framework combining frame prediction for visual-event timing with asynchronous response acquisition. Corrected timestamps support behavioural measurements and physiological event markers. Hardware validation found millisecond-scale stimulus–response timing in the tested standalone and Meta PC-VR configurations; PICO PC-VR retained substantial residual errors.</p><p class="project-note">Validation study completed; manuscript in preparation for submission. Presented with Michael Wiesing at CuttingGardens 2026. Timing performance depends on the hardware and software configuration; complete physiological recording pathways require separate validation.</p>
 <div class="demo-row">
   <button
-    class="demo-btn"
+    class="demo-btn" aria-expanded="false"
     data-target="media-content-fuentes"
-    data-open-label="See presentation"
-    data-close-label="Hide presentation"
+    data-open-label="Watch earlier work · VR Summit 2025"
+    data-close-label="Hide video"
   >
-    See presentation
+    Watch earlier work · VR Summit 2025
   </button>
 </div>
 
 <div id="media-content-fuentes" class="media-container media-collapsed">
-  <iframe
+  <iframe loading="lazy"
     class="project-media-frame"
-    src="https://www.youtube.com/embed/29M_bSkyXO0?start=14400"
+    title="Earlier timing work presented at VR Summit 2025" src="https://www.youtube.com/embed/29M_bSkyXO0?start=14400"
     allowfullscreen
   ></iframe>
 </div>
-          <div class="pill-row">
-            <span class="pill">Analyzing Precision</span>
+          <div class="resource-links"><a href="https://cuttingeeg.org/cuttinggardens2026/gardens/barcelona/" target="_blank" rel="noopener noreferrer">CuttingGardens · Conference page</a></div><div class="resource-links"><a href="https://gitlab.com/eventlabprojects/chronoxr/chronoxr" target="_blank" rel="noopener noreferrer" title="Unity package and basic samples">Get ChronoXR ↗</a><a href="https://gitlab.com/eventlabprojects/chronoxr/chronoxr-template" target="_blank" rel="noopener noreferrer" title="Ready-to-use Unity project template">Example project ↗</a></div><p class="project-note">The Unity package includes basic samples. Use the example project as a starting point for a full experiment.</p><div class="pill-row"><span class="pill">Code available</span>
+            <span class="pill">Manuscript in preparation</span>
           </div>
         </article>
 
@@ -652,6 +648,7 @@
         if (!panel) return;
 
         const isCollapsed = panel.classList.contains("media-collapsed");
+        btn.setAttribute("aria-expanded", String(isCollapsed));
         if (isCollapsed) {
           panel.classList.remove("media-collapsed");
           btn.textContent = closeLabel;
